@@ -1,0 +1,117 @@
+<!Doctype html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Ghercioiu Validator</title>
+</head>
+
+
+<style type="text/css">
+	body {
+		background: #6bacc4; /* Old browsers */
+		background: -moz-linear-gradient(-45deg, #6bacc4 0%, #74bfad 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(-45deg, #6bacc4 0%,#74bfad 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(135deg, #6bacc4 0%,#74bfad 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6bacc4', endColorstr='#74bfad',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+		overflow-x: hidden;
+		overflow-y: hidden;
+	}
+	#validateButton {
+		position: absolute;
+		width: 15%;
+		left: 50%;
+		margin-left: -7.5%;
+		margin-top: 5vh;
+	}
+	h2 {
+		font-family: 'Source Sans Pro', Verdana;
+		color: #FFF;
+	}
+	p {
+		font-family: 'Source Sans Pro', Verdana;
+		color: #FFF;
+	}
+	#answer {
+		position: absolute;
+		top: 0;
+   		bottom: 15px;
+   		text-align: center;
+   		width: 100%;
+   		margin-left: -0.5vw;
+   		margin-top: 35vh;
+	}
+	#about {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		margin-left: 15vw;
+		margin-bottom: 5vh;
+	}
+	#copy {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		margin-right: 10vw;
+		margin-bottom: 5vh;
+	}
+</style>
+
+<script type="text/javascript">
+	function checkMargins() {
+		var h = window.innerHeight;
+		var w = window.innerWidth;
+		if (h > w) {
+			document.getElementById('answer').style.marginTop = "23vh";
+		}
+	}
+
+	function validateMe (min, max) {
+			min = Math.ceil(min);
+  			max = Math.floor(max);
+
+  			var number = Math.floor(Math.random() * (max - min + 1)) + min;
+  				
+
+  			if (number == 1) {
+  					document.getElementById('answer').innerHTML = "&#34;Shut Up!&#34;";
+  			} else if (number == 2) {
+  					document.getElementById('answer').innerHTML = "&#34;That's Bullsh*t!&#34;";
+  			} else if (number == 3) {
+  					document.getElementById('answer').innerHTML = "&#34;No, that's true.&#34;";
+  			} else if (number == 4) {
+  					document.getElementById('answer').innerHTML = "&#34;Julia!&#34;";
+  			} else if (number == 5) {
+  					document.getElementById('answer').innerHTML = "&#34;Practically...&#34;";
+  			} else if (number == 6) {
+  					document.getElementById('answer').innerHTML = "&#34;No! Seriously...&#34;";
+  			} else if (number == 7) {
+  					document.getElementById('answer').innerHTML = "&#34;Is he Romanian?&#34;";
+  			} else if (number == 8) {
+  					document.getElementById('answer').innerHTML = "&#34;Where are my scones?&#34;";
+  			} else if (number == 9) {
+  					document.getElementById('answer').innerHTML = "&#34;Hey friends.&#34;";
+  			} else if (number == 10) {
+  					document.getElementById('answer').innerHTML = "&#34;Hello, People!&#34;";
+  			} else {
+  					document.getElementById('answer').innerHTML = number;	
+  			}
+
+
+	}
+</script>
+
+
+<body onload="checkMargins()">
+	<img src="ValidateMe.png" id="validateButton" onclick="validateMe(1.0, 10.0)"/>
+	<h2 id="answer"></h2>
+
+	
+	<div id="footer">
+		<p id="about">About</p>
+		<p id="copy">Copyright &copy; 2017</p>
+	</div>
+	
+
+</body>
+</html>
